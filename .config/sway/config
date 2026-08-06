@@ -83,6 +83,9 @@ bindsym --to-code $mod+shift+s exec ~/.local/bin/screenshot
 # Start your launcher
 bindsym --release Super_L exec $menu
 
+# Wleave
+bindsym $mod+Shift+q exec wleave
+
 # Drag floating windows with holding repo mod and left mouse button
 floating_modifier $mod normal
 
@@ -137,8 +140,5 @@ exec_always --no-startup-id lxqt-policykit-agent
 # Правильный запуск окон паролей и переменных среды в Sway:
 exec env QT_QPA_PLATFORM=wayland QT_QPA_PLATFORMTHEME=qt5ct lxqt-policykit-agent
 
-
-
 # Переменная для Electron/Vesktop (чтобы он видел Wayland-порталы)
 exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
-
