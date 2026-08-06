@@ -1,0 +1,74 @@
+/* Палитра Catppuccin Mocha */
+@define-color base #1e1e2e;
+@define-color mantle #181825;
+@define-color crust #11111b;
+@define-color text #cdd6f4;
+@define-color mauve #cba6f7;
+@define-color surface0 #313244;
+@define-color surface1 #45475a;
+@define-color blue #89b4fa;
+
+* {
+    font-family: "JetBrainsMono Nerd Font", monospace;
+    font-size: 13px;
+    border: none;
+    border-radius: 0;
+}
+
+window#waybar {
+    background-color: transparent; /* Делаем саму подложку прозрачной для эффекта парящих модулей */
+    color: @text;
+}
+
+/* Общие стили для всех модулей справа и по центру */
+#workspaces, #clock, #cpu, #memory, #language {
+    background-color: @base;
+    border: 2px solid @surface1;
+    border-radius: 0px; /* Небольшое скругление */
+    padding: 4px 4px;
+    margin: 4px 4px;
+}
+
+/* Активный рабочий стол */
+#workspaces button.focused {
+    background-color: @mauve;
+    color: @crust;
+    border-color: @mauve;
+}
+
+/* Неактивные рабочие столы при наведении */
+#workspaces button:hover {
+    background-color: @surface0;
+    color: @text;
+}
+
+/* Стили для кнопок рабочих столов внутри модуля */
+#workspaces button {
+    padding: 0 5px;
+    color: @text;
+    background-color: transparent;
+}
+
+/* Выделение важных блоков цветом */
+#clock {
+    border-color: @mauve;
+    color: @mauve;
+}
+
+#language {
+    border-color: @mauve;
+    color: @mauve;
+}
+
+#tray {
+    padding: 0 10px;
+    margin: 0 5px;
+}
+
+#tray > .passive {
+    opacity: 0.5;
+}
+
+#tray > .needs-attention {
+    color: #f38ba8;
+}

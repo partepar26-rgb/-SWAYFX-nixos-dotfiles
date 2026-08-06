@@ -1,0 +1,50 @@
+# Mako config - Material 3 / End-4 style
+
+font=JetBrains Mono 11
+
+# позиция
+anchor=top-right
+margin=15
+
+# размеры
+width=380
+height=120
+padding=15
+
+# цвета
+background-color=#1e1e2eff
+text-color=#cdd6f4ff
+
+border-color=#cba6f7ff
+border-size=2
+border-radius=0
+
+# прозрачность
+default-timeout=5000
+
+# иконки
+icons=1
+max-icon-size=48
+
+# текст
+markup=1
+
+# группы уведомлений
+group-by=app-name
+
+# анимация появления
+layer=overlay
+
+# уровень срочности
+[urgency=low]
+background-color=#181825dd
+border-color=#89b4faff
+
+[urgency=normal]
+background-color=#1e1e2eff
+border-color=#cba6f7ff
+
+[urgency=critical]
+background-color=#302030ff
+border-color=#f38ba8ff
+text-color=#f38ba8ff
