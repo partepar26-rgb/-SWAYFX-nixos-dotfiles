@@ -148,6 +148,8 @@
   wayfreeze
   wev
   vscodium
+  python313
+  
   libappindicator-gtk3
   qt6Packages.qtstyleplugin-kvantum
   (catppuccin-kvantum.override {
@@ -267,11 +269,6 @@ system.activationScripts.rootKvantumConfig = ''
 
 # Передаем переменные в системный D-Bus и графические службы
 services.dbus.packages = [ pkgs.lxqt.lxqt-policykit ];
-
-
-
-
-
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

@@ -5,12 +5,7 @@ set $mod Mod4
 set $term foot
 
 # Preferred application launcher
-set $menu fuzzel
-
-# Preferred browser
-set $browser firefox
-
-# preferred Screenshot
+set $menu walker
 
 # Font for window titles
 font pango:monospace 8
@@ -69,22 +64,13 @@ input "type:keyboard" {
 }
 
 # Start a terminal
-bindsym --to-code $mod+t exec $term
+bindsym $mod+t exec $term
 
 # Kill focused window
-bindsym --to-code $mod+q kill
-
-# Start a browser
-bindsym --to-code $mod+w exec $browser
-
-# Start screenshot
-bindsym --to-code $mod+shift+s exec ~/.local/bin/screenshot
+bindsym $mod+Shift+q kill
 
 # Start your launcher
-bindsym --release Super_L exec $menu
-
-# Wleave
-bindsym --to-code $mod+Shift+q exec wleave
+bindsym $mod+a exec $menu
 
 # Drag floating windows with holding repo mod and left mouse button
 floating_modifier $mod normal
@@ -119,11 +105,11 @@ bindsym $mod+Shift+4 move container to workspace number 4
 # Layout modifiers
 bindsym $mod+b splith
 bindsym $mod+v splitv
-bindsym --to-code $mod+f fullscreen toggle
-bindsym $mod+space floating toggle
+bindsym $mod+f fullscreen toggle
+bindsym $mod+Shift+space floating toggle
 
 # Reload the configuration file
-bindsym --to-code $mod+alt+c reload
+bindsym $mod+alt+c reload
 
 # --- Запуск Waybar вместо стандартной панели ---
 bar {
@@ -132,13 +118,3 @@ bar {
 
 exec_always autotiling-rs
 
-for_window [title="(?i)authentication"] floating enable, move position center
-for_window [title="(?i)авторизация"] floating enable, move position center
-
-exec_always --no-startup-id lxqt-policykit-agent
-
-# Правильный запуск окон паролей и переменных среды в Sway:
-exec env QT_QPA_PLATFORM=wayland QT_QPA_PLATFORMTHEME=qt5ct lxqt-policykit-agent
-
-# Переменная для Electron/Vesktop (чтобы он видел Wayland-порталы)
-exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway

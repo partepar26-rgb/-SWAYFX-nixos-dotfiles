@@ -7,3 +7,4 @@ fi
 
 alias ff='clear && fastfetch -l nixos_small'
 alias rebld='sudo nixos-rebuild switch'
+alias search='clear && python #PATH#'

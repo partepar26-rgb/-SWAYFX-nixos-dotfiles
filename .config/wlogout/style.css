@@ -1,0 +1,25 @@
+* {
+    background-image: none !important;
+    box-shadow: none !important;
+}
+
+window {
+    background-color: rgba(30, 30, 46, 0.85);
+}
+
+button {
+    margin: 110px 40px;
+    border-radius: 0px;
+    border: 2px solid #313244;
+    background-color: #181825;
+    color: #cba6f7;
+    font-size: 16px;
+    font-family: monospace;
+}
+
+button:focus, button:active, button:hover {
+    background-color: #cba6f7;
+    border-color: #cba6f7;
+    color: #11111b;
+    outline-style: none;
+}
