@@ -8,7 +8,7 @@ Welcome to my first swayfx rice
 
 ________________________________
 
-//2 Keybinds:
+//1 Keybinds:
 
 foot (super+t)
 
