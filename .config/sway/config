@@ -142,3 +142,38 @@ exec env QT_QPA_PLATFORM=wayland QT_QPA_PLATFORMTHEME=qt5ct lxqt-policykit-agent
 
 # Переменная для Electron/Vesktop (чтобы он видел Wayland-порталы)
 exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+
+output DVI-D-1 pos 0 0
+output HDMI-A-1 pos 1920 220
+
+mouse_warping none
+
+# Форсированная обводка для всех типов окон, включая плавающие
+for_window [app_id=".*"] border pixel 2
+for_window [class=".*"] border pixel 2
+
+# Фикс для корректного отображения обводки при ручном переключении в плавающий режим
+for_window [floating] border pixel 2
+
+# Фокус всегда следует за направлением стрелок, игнорируя разделение на слои
+focus_wrapping no
+
+# Быстрое переключение фокуса между плавающим и тайловым режимом
+bindsym $mod+Tab focus mode_toggle
+
+# Режим изменения размера окон
+mode "resize" {
+    # Изменение размера стрелками
+    bindsym Left resize shrink width 10 px or 10 ppt
+    bindsym Down resize grow height 10 px or 10 ppt
+    bindsym Up resize shrink height 10 px or 10 ppt
+    bindsym Right resize grow width 10 px or 10 ppt
+
+    # Возврат в обычный режим по кнопке Enter или Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+# Активация режима изменения размера по комбинации Mod+R
+bindsym --to-code $mod+r mode "resize"
+
